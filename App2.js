@@ -1,25 +1,11 @@
-function fetchApi(){
-    let promise = new Promise(function(resolve, reject){
-        setTimeout(function(){
-            console.log("Promise Function");
-            reject("error define");
-        },1000)
-    })
+console.log("Before Preparing Food !");
 
-    return promise
+function prepareFood(){
+
+    console.log("Preparing Food !");
+
 }
 
-async function _asyncJs(){
-    try{
-        let data = await fetchApi();
+prepareFood();
 
-    console.log(data, "Successfull");
-    }
-    catch(error){
-
-        console.log(error, "error")
-
-    }
-}
-
-_asyncJs();
+console.log("After Preparing Food; Dinner is ready !")
