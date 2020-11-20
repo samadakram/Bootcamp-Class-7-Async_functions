@@ -31,13 +31,18 @@ const prepareCoffee = () => {
 }
 
 async function startProcess(){
-    let foodValue = await prepareFood();
-    console.log("Food = ", foodValue);
-    let prepareFrenchToastValue = await prepareFrenchToast();
-    console.log("Toast = ", prepareFrenchToastValue);
-    let prepareCoffeeValue = await prepareCoffee();
-    console.log("Coffee = ", prepareCoffeeValue);
-}
+    try{
+        let foodValue = await prepareFood();
+        console.log("Food = ", foodValue);
+        let prepareFrenchToastValue = await prepareFrenchToast();
+        console.log("Toast = ", prepareFrenchToastValue);
+        let prepareCoffeeValue = await prepareCoffee();
+        console.log("Coffee = ", prepareCoffeeValue);
+    }
+    catch(error) {
+        console.log("Error in catch", error);
+    }
+    }
 
 startProcess();
 
