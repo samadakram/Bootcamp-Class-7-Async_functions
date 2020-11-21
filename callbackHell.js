@@ -21,20 +21,15 @@ const class_3 = (callback) => {
     },6000);
 }
 
-classTimeTable(myCallback);
-
-function myCallback(value){
+classTimeTable(function(value){
     console.log("Next Class is => ",value);
-    class_2(class_2_callback);
-}
+    class_2(function(value){
+        console.log("Next Class is => ",value);
+        class_3(function(value){
+            console.log(" => ",value);
+        });
+    });
+});
 
-function class_2_callback(value){
-    console.log("Next Class is => ",value);
-    class_3(class_3_callback);
-}
-
-function class_3_callback(value){
-    console.log(" => ",value);
-}
 
 console.log("Classes Off Time !");
