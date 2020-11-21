@@ -31,12 +31,17 @@ const prepareCoffee = () => {
 }
 
 async function startCooking(){
-    let prepareFoodValue = await prepareFood();
-    console.log("Food =>", prepareFoodValue);
-    let prepareFrenchToastValue = await prepareFrenchToast();
-    console.log("Toast =>", prepareFrenchToastValue);
-    let prepareCoffeeValue = await prepareCoffee();
-    console.log("Coffee =>", prepareCoffeeValue); 
+    try{
+        let prepareFoodValue = await prepareFood();
+        console.log("Food =>", prepareFoodValue);
+        let prepareFrenchToastValue = await prepareFrenchToast();
+        console.log("Toast =>", prepareFrenchToastValue);
+        let prepareCoffeeValue = await prepareCoffee();
+        console.log("Coffee =>", prepareCoffeeValue); 
+    }
+    catch(error){
+        console.log("Error =>", error);
+    }
 }
 
 
